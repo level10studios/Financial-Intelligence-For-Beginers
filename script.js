@@ -12,7 +12,8 @@ const translations = {
         numbersBtn: "Descargar .NUMBERS",
         footerRights: "Todos los derechos reservados.",
         excelLink: "https://docs.google.com/spreadsheets/d/1CXnhcSexJP9m2NjJXYp29kRjzNgfXBi3/edit?usp=sharing&ouid=107881861004850244031&rtpof=true&sd=true",
-        numbersLink: "https://drive.google.com/file/d/10q8w8GvKJEvUNedvhfZKtMVYGq9329hg/view?usp=sharing"
+        numbersLink: "https://drive.google.com/file/d/10q8w8GvKJEvUNedvhfZKtMVYGq9329hg/view?usp=sharing",
+        bookImg: "assets/cover-es.png"
     },
     en: {
         heroTitle: "Financial Intelligence for Beginners",
@@ -27,7 +28,8 @@ const translations = {
         numbersBtn: "Download .NUMBERS",
         footerRights: "All rights reserved.",
         excelLink: "https://docs.google.com/spreadsheets/d/1SAI33aEubke92rOabeIDXpzzuR3iTj4f/edit?usp=sharing&ouid=107881861004850244031&rtpof=true&sd=true",
-        numbersLink: "https://drive.google.com/file/d/1bBYGqtApCg8GTFjq3UwVoaqmOHryvjPu/view?usp=sharing"
+        numbersLink: "https://drive.google.com/file/d/1bBYGqtApCg8GTFjq3UwVoaqmOHryvjPu/view?usp=sharing",
+        bookImg: "assets/cover-en.png"
     }
 };
 
@@ -36,7 +38,7 @@ const langEnBtn = document.getElementById('lang-en');
 
 function updateContent(lang) {
     const t = translations[lang];
-    
+
     document.getElementById('hero-title').textContent = t.heroTitle;
     document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
     document.getElementById('thank-you-msg').textContent = t.thankYouMsg;
@@ -50,6 +52,7 @@ function updateContent(lang) {
     document.getElementById('numbers-link').textContent = t.numbersBtn;
     document.getElementById('numbers-link').href = t.numbersLink;
     document.getElementById('footer-rights').textContent = t.footerRights;
+    document.getElementById('book-img').src = t.bookImg;
 
     // Update active button
     if (lang === 'es') {
@@ -73,10 +76,10 @@ updateContent('es');
 const card = document.querySelector('.book-card');
 document.addEventListener('mousemove', (e) => {
     if (window.innerWidth < 968) return;
-    
+
     const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    
+
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 });
 
